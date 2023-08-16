@@ -8,6 +8,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 // img
 
+// 깃 연결 확인 
+
 
 function App() {
   return (

@@ -3,6 +3,8 @@ import { DataStateContext } from "../App";
 
 import Card from '../components/Card'
 
+import { Link } from "react-router-dom";
+
 
 
 const Home = () => {
@@ -18,7 +20,9 @@ const Home = () => {
       <section className="container">
         <div className="row">
           {products.map((it) => (
-            <Card data={it} />
+            <Link to>
+                <Card data={it} />
+            </Link>
           ))}
         </div>
       </section>

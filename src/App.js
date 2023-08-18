@@ -1,11 +1,12 @@
-import "./App.css";
-
 // Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+
+// 부트스트랩 css 밑에 내 css import
+import "./App.css";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
@@ -26,9 +27,10 @@ function App() {
         <div className="App">
           <Navbar collapseOnSelect expand="lg">
             <Container>
-              <Link to="/">
-                  <Navbar.Brand href="#home">BYCHARI</Navbar.Brand>
-              </Link>
+              <Navbar.Brand>
+                <Link to="/">BYCHARI</Link>
+              </Navbar.Brand>
+
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
@@ -39,6 +41,7 @@ function App() {
                     <NavDropdown.Item href="#action/3.1">
                       Necklace
                     </NavDropdown.Item>
+                  
                     <NavDropdown.Item href="#action/3.2">
                       Earing
                     </NavDropdown.Item>
@@ -53,7 +56,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/detail" element={<Detail />}/>
+            <Route path="/detail:id" element={<Detail />} />
           </Routes>
         </div>
       </BrowserRouter>

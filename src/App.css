@@ -14,6 +14,28 @@ a {
 
 .App { 
   margin: auto;
+  max-width: 1180px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin: 0px 10px;
+  padding: 10px;
+}
+
+nav .logo {
+  font-size: 30px;
+  margin-right: 40px;
+}
+
+nav .nav_menus span{ 
+  margin-right: 20px;
+  color: rgb(65, 65, 65);
+}
+
+main { 
+  padding: 0px 10px;
 }
 
 @media (min-width:1320px) {
@@ -46,4 +68,48 @@ a {
 
 .product_card h6 { 
   margin-top: 10px;
+}
+
+
+/* 상품 디테일 */
+.Detail {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.Detail .detail_wrap { 
+  display: flex;
+
+}
+
+.Detail .img_area { 
+  width: 50%;
+}
+
+.Detail .info_area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Detail img { 
+  width: 100%;
+}
+.Detail .info_area span { 
+  margin-top: 10px;
+  padding: 10px;
+}
+.Detail .info_area > span:nth-child(1) { 
+  font-weight: bold;
+  font-size: 20px;
+}
+.Detail .info_area > span:nth-child(2) { 
+  font-size: 15px;
+  color: gray;
+}
+
+.Detail .info_area > span:nth-child(3) {
+  font-weight: 500;
 }

@@ -1,9 +1,5 @@
 // Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 // 부트스트랩 css 밑에 내 css import
 import "./App.css";
@@ -25,39 +21,26 @@ function App() {
     <DataStateContext.Provider value={products}>
       <BrowserRouter>
         <div className="App">
-          <Navbar collapseOnSelect expand="lg">
-            <Container>
-              <Navbar.Brand>
-                <Link to="/">BYCHARI</Link>
-              </Navbar.Brand>
+          <nav>
+            <span className="logo">BYCHARI</span>
 
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                  <Nav.Link href="#features">About</Nav.Link>
-                  <Nav.Link href="#pricing">Notice</Nav.Link>
+           <div className="nav_menus">
+              <span>ABOUT</span>
+              <span>NECKLACE</span>
+              <span>EARRING</span>
+              <span>BRACELET</span>
+           </div>
+          </nav>
+         
+          <main>
 
-                  <NavDropdown title="Product" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">
-                      Necklace
-                    </NavDropdown.Item>
-                  
-                    <NavDropdown.Item href="#action/3.2">
-                      Earing
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
-                      Bracelet
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/detail" element={<Detail />} />
+            </Routes>
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/detail:id" element={<Detail />} />
-          </Routes>
+          </main>
+          
         </div>
       </BrowserRouter>
     </DataStateContext.Provider>

@@ -4,7 +4,8 @@ const data = [
     title: "SPACED LETTER NECKLACE",
     content: "Undoubtedly our best selling style. Nothing spells luxe like something made just for you. This piece will grow with you, is always in style, on-trend, and age-appropriate. Customize your heart out and get it in the world's finest metals.",
     price: 399000,
-    img: process.env.PUBLIC_URL + "/imgs/necklace.webp"
+    img: process.env.PUBLIC_URL + "/imgs/necklace.webp",
+    opts: ["gold", "rose gold", "sliver"]
   },
 
   {

@@ -1,6 +1,3 @@
-// Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
-
 // 부트스트랩 css 밑에 내 css import
 import "./App.css";
 
@@ -25,10 +22,6 @@ function App() {
             <span className="logo">BYCHARI</span>
 
            <div className="nav_menus">
-              <span>ABOUT</span>
-              <span>NECKLACE</span>
-              <span>EARRING</span>
-              <span>BRACELET</span>
            </div>
           </nav>
          

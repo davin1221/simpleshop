@@ -12,21 +12,17 @@ const Home = () => {
   const products = useContext(DataStateContext);
 
   return (
-    <>
+    <div className="Home">
       <section className="main-bg">
         <img src={process.env.PUBLIC_URL + "/imgs/mainImg.jpeg"} />
       </section>
 
-      <section className="container">
-        <div className="row">
+      <section className="card_container">
           {products.map((it) => (
-            <Link to>
-                <Card data={it} />
-            </Link>
+             <Card data={it} />
           ))}
-        </div>
       </section>
-    </>
+    </div>
   );
 };
 

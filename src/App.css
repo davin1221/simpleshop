@@ -23,6 +23,7 @@ nav {
 nav .logo {
   font-size: 20px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 nav .nav_menus span{ 
@@ -53,21 +54,27 @@ main {
   width: 100%;
 }
 
-.Home .product_card { 
+.Home .Card{ 
   width: 49%;
   margin-bottom: 20px;
 }
 
 
 /* 상품 카드  */
-.product_card { 
+.Card { 
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
-.product_card h6 { 
+.Card h5 { 
   margin-top: 10px;
+}
+
+.Card p { 
+  margin-top: 5px;
+  font-size: 13px;
 }
 
 
@@ -150,6 +157,11 @@ main {
 .Detail .opt_gold{ 
   background-color: #FDDC5C;
 }
+
+.Detail .opt_white_gold{ 
+  background-color: #FFFAF1;
+}
+
 .Detail .opt_rose_gold{ 
   background-color: #E7B1A5;
 }
@@ -195,3 +207,10 @@ main {
   cursor: pointer;
 }
  
+
+
+.Event { 
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}

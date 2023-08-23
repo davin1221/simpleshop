@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const Card = ({ data }) => { 
 
-    return <div className="product_card">
+    const navigate = useNavigate();
+
+    return <div className="Card" onClick={()=> navigate(`/detail/${data.id}`)}>
                 <img src={data.img} width={"100%"}/>
-                <h6>{data.title}</h6>
+                <h5>{data.title}</h5>
                 <p>₩ {data.price.toLocaleString()}</p>
            </div>
 

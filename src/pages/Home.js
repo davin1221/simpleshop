@@ -1,9 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataStateContext } from "../App";
 
 import Card from '../components/Card'
-
-import { Link } from "react-router-dom";
 
 
 
@@ -19,7 +17,7 @@ const Home = () => {
 
       <section className="card_container">
           {products.map((it) => (
-             <Card data={it} />
+             <Card data={it}/>
           ))}
       </section>
     </div>

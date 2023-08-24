@@ -9,6 +9,14 @@ const Detail = () => {
 
   const data = useContext(DataStateContext);
 
+  const [tab, setTab] = useState("detail")
+
+  const handleTab = (e) => { 
+    console.log("??")
+    setTab(e.target.name);
+    console.log(tab);
+  }
+
   return (
     <section className="Detail">
       <div className="detail_wrap">
@@ -45,6 +53,7 @@ const Detail = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

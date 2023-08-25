@@ -8,12 +8,13 @@ import data from "./components/Data";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NavBar from "./components/NavBar";
+import Cart from "./pages/Cart";
 
 // Context
 export const DataStateContext = React.createContext();
 
 function App() {
-  const [products, setProducts] = useState(data);
+  const [products] = useState(data);
 
   return (
     <DataStateContext.Provider value={products}>
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/cart" element={<Cart />} />
               
               <Route path="*" element={<div>없는 페이지</div>} />
             </Routes>

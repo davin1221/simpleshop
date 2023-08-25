@@ -1,5 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faEye } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -8,9 +11,13 @@ const NavBar = () => {
   const [burger, setBurger] = useState("burger-bar unclicked");
   const [menu, setMenu] = useState("menu hidden");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  
+  const location = useLocation();
 
   // 메뉴 토글
-  const updateMenu = () => {
+  const UpdateMenu = () => {
+
+
     if (!isMenuClicked) {
       setBurger("burger-bar clicked");
       setMenu("menu visible");
@@ -21,6 +28,13 @@ const NavBar = () => {
 
     setIsMenuClicked(!isMenuClicked);
   };
+
+  useEffect(()=> {
+    if(isMenuClicked) { 
+        setIsMenuClicked(false);
+        UpdateMenu();
+    } 
+  },[window.location.pathname]);
 
   return (
     <nav>
@@ -34,7 +48,7 @@ const NavBar = () => {
       </span>
 
       <div className="hamburger_area">
-        <div className="hamburger" onClick={updateMenu}>
+        <div className="hamburger" onClick={UpdateMenu}>
           <div className={burger}></div>
           <div className={burger}></div>
           <div className={burger}></div>
@@ -42,12 +56,12 @@ const NavBar = () => {
       </div>
 
       <div className={menu}>
-        <div className="cart_a">
-            <span>Cart</span>
-            <span>Recently view products</span>
+        <div className="cart_area">
+            <span onClick={()=> navigate('/cart')}><FontAwesomeIcon icon={faCartShopping} /></span>
+            <span><FontAwesomeIcon icon={faEye} /></span>
         </div>
         
-        <ul className="nav_category">
+        <ul className="category_area">
           <li>NECKLACE</li>
           <li>EARRING</li>
           <li>BRACELET</li>

@@ -9,12 +9,34 @@ const Detail = () => {
 
   const data = useContext(DataStateContext);
 
-  const [tab, setTab] = useState("detail")
+  const [colorName, setColorName ] = useState();
+  const [selectedColor, setSelectedColor ] = useState();
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  const handleTab = (e) => { 
-    console.log("??")
-    setTab(e.target.name);
-    console.log(tab);
+  const showColorName = (it) => { 
+    setColorName(it.replace(/_/g, ' '));
+  }
+
+  const selectColor = (it) => { 
+    setSelectedColor(it);
+  }
+
+  const selectQuantity = (quantity) => { 
+    if(selectedQuantity === 1 && quantity === -1) { 
+        return
+    }
+    setSelectedQuantity(selectedQuantity + quantity);
+  }
+
+  const handleAddCart = (id) => { 
+    if(selectedColor === undefined) {
+        alert("색상을 선택해주세요.");
+        return
+    }
+
+    console.log(id, selectedColor, selectedQuantity);
+    // 여기에 dispath 함수 추가 
+    
   }
 
   return (
@@ -35,21 +57,26 @@ const Detail = () => {
 
           <div className="opt_area">
             <span>Color</span>
-            <div className="opt_colors">
-              { data[id].opts.map((it)=> (
-                  <div className={`opt opt_${it}`}> </div>
-              ))} 
+            <div className="opt_color_wrap">
+                <div className="opt_colors">
+                { data[id].opts.map((it)=> (
+                    <div className={`opt opt_${it} ${selectedColor === it ? 'selected' : ''}`}
+                         onMouseEnter={()=> showColorName(it)}
+                         onClick={()=> selectColor(it)}></div>
+                ))} 
+                </div>
+                <span className="opt_color_name">{colorName}</span>
             </div>
-
+            
             <span>Quantity</span>
             <div className="opt_quantity">
-              <button>-</button>
-              <span>0</span>
-              <button>+</button>
+              <button onClick={()=>selectQuantity(-1)}>-</button>
+              <span>{selectedQuantity}</span>
+              <button onClick={()=>selectQuantity(1)}>+</button>
             </div>
 
             <div className="order_area">
-              <button>Add to Cart</button>
+              <button onClick={()=> handleAddCart(data[id].id)}>Add to Cart</button>
             </div>
           </div>
         </div>

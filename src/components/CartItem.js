@@ -3,6 +3,7 @@ import data from "./Data";
 
 const CartItem = ({ cartProdcut }) => { 
 
+    // 장바구니 아이템 - 데이터 비교 후 필요 정보 가져오기 
     const [prodcut] = useState(data);
     const cartProductinfo = prodcut.find((it)=> it.id === cartProdcut.id);
 
@@ -17,7 +18,7 @@ const CartItem = ({ cartProdcut }) => {
             <img src={cartProductinfo.img}/>
         </div>
         <div className="cart_info">
-            <h4>{cartProdcut.name}</h4>
+            <h4>{cartProductinfo.title}</h4>
             <span className="cart_info_opts">
                 {cartProductinfo.opts.map((it)=> (
                     <div className={`${it}`}></div>

@@ -25,6 +25,31 @@ const data = [
     img: process.env.PUBLIC_URL + "/imgs/bracelet.webp",
     opts: ["gold", "white_gold", "rose_gold", "silver"]
   },
+  {
+    id: 3,
+    title: "LIBRA NECKLACE",
+    content: "Known as a lover of love and harmony, this cardinal air sign is ruled by Venus. They have keen artistic inclinations that they show off through their innate talents. They also like to live the good life, which means they have champagne wishes and caviar dreams.",
+    price: 459000,
+    img: process.env.PUBLIC_URL + "/imgs/necklace2.jpeg",
+    opts: ["gold", "rose_gold", "silver"]
+
+  },
+  {
+    id: 4,
+    title: "MEDIUM CLASSIC BALL EARRING",
+    content: "This classic earring is a staple for everyone.  From your simple stud to a statement look, we have the perfect size for you.",
+    price: 82000,
+    img: process.env.PUBLIC_URL + "/imgs/earing2.webp",
+    opts: ["gold", "white_gold"]
+  },
+  {
+    id: 5,
+    title: "COMO BRACELET",
+    content: "Want to switch it up? This delicate paper clip chain is the finer version of our best-selling Soho Bracelet. The Como is a charming alternative to your classic chain—a stunning essential for everyone. ",
+    price: 399000,
+    img: process.env.PUBLIC_URL + "/imgs/bracelet2.webp",
+    opts: ["gold"]
+  },
 ];
 
 export default data;

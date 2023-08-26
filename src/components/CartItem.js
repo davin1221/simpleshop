@@ -6,6 +6,10 @@ const CartItem = ({ cartProdcut }) => {
     const [prodcut] = useState(data);
     const cartProductinfo = prodcut.find((it)=> it.id === cartProdcut.id);
 
+    const handleQuantity = (props) => {
+        console.log("clicked: ", props )
+    }
+
 
 
     return <div className="CartItem">
@@ -20,9 +24,9 @@ const CartItem = ({ cartProdcut }) => {
                 ))}
             </span>
             <span className="cart_info_quantity">
-                <button>-</button>
+                <button onClick={()=>handleQuantity(-1)}>-</button>
                 <span>{cartProdcut.quantity}</span>
-                <button>+</button>
+                <button onClick={()=>handleQuantity(1)}>+</button>
             </span>
             <span className="cart_info_price">
                 ₩ {(cartProductinfo.price * cartProdcut.quantity).toLocaleString()}

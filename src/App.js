@@ -19,7 +19,18 @@ function App() {
 
   // 최근 본 상품 데이터 
   useEffect(()=>{ 
-    localStorage.setItem('RecentlyViewd', JSON.stringify([]));
+    
+    // 최근 본 상품
+    const viewed = localStorage.getItem('RecentlyViewd');
+    if(viewed === null) { 
+      localStorage.setItem('RecentlyViewd', JSON.stringify([]));
+    }
+
+    // 카트 상품 
+    const cartProduct = localStorage.getItem('cart');
+    if(cartProduct === null) {
+      localStorage.setItem('cart', JSON.stringify([]))
+    }
   },[])
 
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DataStateContext } from "../App";
 
@@ -28,15 +28,29 @@ const Detail = () => {
     setSelectedQuantity(selectedQuantity + quantity);
   }
 
+  let cartId = 0;
+
   const handleAddCart = (id) => { 
     if(selectedColor === undefined) {
         alert("색상을 선택해주세요.");
         return
     }
-
-    console.log(id, selectedColor, selectedQuantity);
-    // 여기에 dispath 함수 추가 
     
+    // 여기에 dispath 함수 추가 
+    let options = { cartid: 'cart' + cartId, id: id, color: selectedColor, quantity: selectedQuantity };
+    
+    console.log("options: ", options )
+
+    // 로컬스토리지에서 cart 데이터 가져오기 
+    let localCartData = JSON.parse(localStorage.getItem('cart'));
+
+    // 옵션 추가 
+    localCartData.push(options);
+
+    // 로컬스토리지에 다시 추가 
+    localStorage.setItem('cart', JSON.stringify(localCartData));
+
+    cartId += 1;
   }
 
   return (

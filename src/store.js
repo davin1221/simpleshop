@@ -1,9 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-import cart from './store/cartSlice';
+const cartTotal = createSlice({
+  name: 'cart',
+  initialState: [], 
+  reducers: {
+    addCart(state, action) {
+
+    },
+
+    calculateCartTotal() {
+      return 0; 
+    },
+  },
+});
+
+export let {addCart, calculateCartTotal } = cartTotal.actions;
 
 export default configureStore({
   reducer: {
-    cart : cart.reducer
-   }
-})  
+    cartTotal: cartTotal.reducer
+  },
+});

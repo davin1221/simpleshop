@@ -11,7 +11,6 @@ const Home = () => {
   const products = useContext(DataStateContext);
 
 
-
   return (
     <div className="Home">
       
@@ -22,7 +21,7 @@ const Home = () => {
 
       <section className="card_container">
           {products.map((it) => (
-             <Card data={it}/>
+             <Card data={it} />
           ))}
       </section>
 

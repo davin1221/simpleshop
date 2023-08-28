@@ -58,7 +58,7 @@ const NavBar = () => {
       <div className={menu}>
         <div className="cart_area">
             <span onClick={()=> navigate('/cart')}><FontAwesomeIcon icon={faCartShopping} /></span>
-            <span><FontAwesomeIcon icon={faEye} /></span>
+            <span onClick={()=> navigate('/RecentlyViewed')}><FontAwesomeIcon icon={faEye} /></span>
         </div>
         
         <ul className="category_area">

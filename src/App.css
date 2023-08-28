@@ -447,3 +447,34 @@ main {
   font-size: 14px;
   text-align: end;
 }
+
+
+
+/* 최근 본 상품 */
+.RecentlyViewd { 
+  margin-top: 20px;
+}
+
+.RecentlyViewd li { 
+  list-style: none;
+  padding: 10px 0px;
+}
+
+.RecentlyViewd .viewedItem { 
+  display: flex;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+
+.RecentlyViewd .viewedItem img { 
+  width: 80px;
+  cursor: pointer;
+}
+
+.RecentlyViewd .viewedItem > div:last-child{ 
+  padding: 0px 10px;
+}
+
+.RecentlyViewd .viewedItem > div:last-child h4{
+  margin-bottom: 10px;
+}

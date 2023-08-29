@@ -5,7 +5,7 @@ const cartTotal = createSlice({
   initialState: [], 
   reducers: {
     addCart(state, action) {
-
+        return console.log(action.payload)
     },
 
     calculateCartTotal() {

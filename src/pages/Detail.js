@@ -36,8 +36,7 @@ const Detail = () => {
         return
     }
     
-    // 여기에 dispath 함수 추가 
-    let options = { cartid: 'cart' + cartId, id: id, color: selectedColor, quantity: selectedQuantity };
+    let options = { cartid: 'cart' + cartId, id: id, color: selectedColor, quantity: selectedQuantity, totalPrice : selectedQuantity * data[id].price };
     
     console.log("options: ", options )
 

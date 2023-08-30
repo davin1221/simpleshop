@@ -43,8 +43,6 @@ const Detail = () => {
     }
     
     let options = { cartid: "cart" + cartId , id: id, color: selectedColor, quantity: selectedQuantity, totalPrice : selectedQuantity * data[id].price };
-    
-    console.log("options: ", options )
 
     // 로컬스토리지에서 cart 데이터 가져오기 
     let localCartData = JSON.parse(localStorage.getItem('cart'));
@@ -57,6 +55,7 @@ const Detail = () => {
 
     dispatch( plusId() );
 
+    alert("장바구니에 해당 상품을 담았습니다.")
   }
 
   return (

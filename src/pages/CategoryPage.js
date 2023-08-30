@@ -9,7 +9,6 @@ const CategoryPage = () => {
 
     // 데이터 필터링
     let filteredProduct = data.filter((it)=> it.category === category);
-    console.log(filteredProduct)
 
 
     return (   

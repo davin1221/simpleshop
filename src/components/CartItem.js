@@ -45,8 +45,6 @@ const CartItem = ({ cartProdcut }) => {
         // 새로운 배열 정렬 
         newCartArr.sort((a,b)=> a.cartid.localeCompare(b.cartid));
 
-        console.log("new!" , newCartArr)
-
         // 로컬스토리지에 다시 세팅 
         localStorage.setItem('cart', JSON.stringify(newCartArr));
 

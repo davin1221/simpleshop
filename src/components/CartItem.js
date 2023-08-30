@@ -35,7 +35,6 @@ const CartItem = ({ cartProdcut }) => {
         // 새로운 옵션
         const newOption = {...cartProdcut, color: color, quantity: quantity, totalPrice: totalPrice};
 
-
         // 수정할 카트 아이템이 빠진 새로운 배열 
         const newCartArr = localData.filter((it) => it.cartid !== cartProdcut.cartid);
 
@@ -66,8 +65,22 @@ const CartItem = ({ cartProdcut }) => {
     }
 
 
+    const handleDelete = () => { 
+         // 로컬스토리지에서 cart데이터 가져오기 
+         let localData = JSON.parse(localStorage.getItem('cart'));  
+         
+         // 해당 아이템이 빠진 새로운 배열 
+         const newCartArr = localData.filter((it)=> it.cartid != cartProdcut.cartid);
 
+        // 새로운 배열 정렬 
+        newCartArr.sort((a,b)=> a.cartid.localeCompare(b.cartid));
 
+        // 로컬스토리지에 다시 세팅 
+        localStorage.setItem('cart', JSON.stringify(newCartArr));
+
+        // 다시 랜더링 
+        dispatch( reCalculate() );
+    }
 
 
     return <div className="CartItem">
@@ -79,7 +92,7 @@ const CartItem = ({ cartProdcut }) => {
             
             <div className="cart_info_top">
                 <h4>{cartProductinfo.title}</h4>
-                <span>&times;</span>
+                <span onClick={()=>handleDelete()}>&times;</span>
             </div>
             
             <span className="cart_info_opts">

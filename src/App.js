@@ -1,15 +1,17 @@
 // 부트스트랩 css 밑에 내 css import
 import "./App.css";
 
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import data from "./components/Data";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NavBar from "./components/NavBar";
+
 import Cart from "./pages/Cart";
 import RecentlyViewed from "./pages/RecentlyViewed";
+import CategoryPage from "./pages/CategoryPage";
 
 // Context
 export const DataStateContext = React.createContext();
@@ -49,6 +51,7 @@ function App() {
               <Route path="/detail/:id" element={<Detail />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/RecentlyViewed" element={<RecentlyViewed />} />
+              <Route path="/CategoryPage/:category" element={<CategoryPage />} />
               
               <Route path="*" element={<div>없는 페이지</div>} />
             </Routes>

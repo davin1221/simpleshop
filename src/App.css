@@ -514,3 +514,26 @@ main {
 .RecentlyViewd .viewedItem > div:last-child h4{
   margin-bottom: 10px;
 }
+
+
+
+/*  카테고리별 페이지  */
+.CategroyPage {
+  margin-top: 20px;
+}
+
+.CategroyPage h3 {
+  margin-bottom: 20px;
+}
+
+.CategroyPage .category_product_wrap { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.CategroyPage .Card{ 
+  width: 49%;
+  margin-bottom: 20px;
+}

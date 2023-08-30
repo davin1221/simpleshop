@@ -17,7 +17,6 @@ const NavBar = () => {
   // 메뉴 토글
   const UpdateMenu = () => {
 
-
     if (!isMenuClicked) {
       setBurger("burger-bar clicked");
       setMenu("menu visible");
@@ -36,6 +35,10 @@ const NavBar = () => {
     } 
   },[window.location.pathname]);
 
+  const goCategory = (e) => { 
+    navigate(`/CategoryPage/${e.target.innerText.toLowerCase()}`)
+  }
+
   return (
     <nav>
       <span
@@ -44,7 +47,7 @@ const NavBar = () => {
           navigate("/");
         }}
       >
-        BYCHARI
+        JEWLS
       </span>
 
       <div className="hamburger_area">
@@ -62,9 +65,9 @@ const NavBar = () => {
         </div>
         
         <ul className="category_area">
-          <li>NECKLACE</li>
-          <li>EARRING</li>
-          <li>BRACELET</li>
+          <li onClick={(e)=> goCategory(e)}>NECKLACE</li>
+          <li onClick={(e)=> goCategory(e)}>EARRING</li>
+          <li onClick={(e)=> goCategory(e)}>BRACELET</li>
         </ul>
       </div>
     </nav>

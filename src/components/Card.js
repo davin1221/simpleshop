@@ -1,8 +1,10 @@
+
 import { useNavigate } from "react-router-dom";
+
 
 const Card = ({ data }) => { 
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
   const clickedProduct = (id) => {

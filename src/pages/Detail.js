@@ -2,6 +2,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DataStateContext } from "../App";
 
+import { useDispatch, useSelector } from "react-redux";
+import { plusId } from "../store";
+
+
+
 const Detail = () => {
 
 
@@ -27,8 +32,9 @@ const Detail = () => {
     }
     setSelectedQuantity(selectedQuantity + quantity);
   }
-
-  let cartId = 0;
+    // cartId 가져오기 
+    const cartId = useSelector((state)=> state.cartId)
+    const dispatch = useDispatch();
 
   const handleAddCart = (id) => { 
     if(selectedColor === undefined) {
@@ -36,7 +42,7 @@ const Detail = () => {
         return
     }
     
-    let options = { cartid: 'cart' + cartId, id: id, color: selectedColor, quantity: selectedQuantity, totalPrice : selectedQuantity * data[id].price };
+    let options = { cartid: "cart" + cartId , id: id, color: selectedColor, quantity: selectedQuantity, totalPrice : selectedQuantity * data[id].price };
     
     console.log("options: ", options )
 
@@ -49,7 +55,8 @@ const Detail = () => {
     // 로컬스토리지에 다시 추가 
     localStorage.setItem('cart', JSON.stringify(localCartData));
 
-    cartId += 1;
+    dispatch( plusId() );
+
   }
 
   return (

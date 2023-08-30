@@ -1,23 +1,32 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-const cartTotal = createSlice({
-  name: 'cart',
-  initialState: [], 
+const cartId = createSlice({
+  name: 'cartId',
+  initialState: 0, 
   reducers: {
-    addCart(state, action) {
-        return console.log(action.payload)
-    },
-
-    calculateCartTotal() {
-      return 0; 
-    },
+    plusId(state) {
+        return state + 1; 
+    }
   },
 });
 
-export let {addCart, calculateCartTotal } = cartTotal.actions;
+const calculatePrice = createSlice({
+    name: 'calculatePrice',
+    initialState: false,
+    reducers: { 
+        reCalculate(state) {
+            return !state;
+        }
+    }
+})
+
+
+export let { plusId } = cartId.actions;
+export let { reCalculate } = calculatePrice.actions;
 
 export default configureStore({
   reducer: {
-    cartTotal: cartTotal.reducer
+    cartId: cartId.reducer,
+    calculatePrice : calculatePrice.reducer
   },
 });
